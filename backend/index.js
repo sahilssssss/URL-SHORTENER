@@ -11,6 +11,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const MAX_URLS_PER_DAY = 100;
 
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
+
 // Shorten a URL
 app.post('/shorten', async (req, res) => {
     const { original_url } = req.body;
